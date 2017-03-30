@@ -1,3 +1,9 @@
-# My Awesome Book
+## 界面设置
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+- 字体：Source Code Pro，Adobe 黑体 Std
+- 颜色主题：Seti
+- 文件图标主题：Seti
+
+## 常用设置
+
+- GitBook, Typora, VsCode, NetEase Cloud Music
