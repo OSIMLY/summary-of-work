@@ -141,3 +141,27 @@ data: {
 
 ### 方法 `methods`
 
+### 计算属性 `computed`
+
+``` js
+// 返回表格主体部分
+bodyWrapper()
+// 能否自动更新表格高度，`height` 属性为数值或具有固定列时可以
+shouldUpdateHeight()
+// 获取行选择集
+selection()
+// 获取列对象集合
+columns()
+// 获取表格数据
+tableData()
+// 获取左侧固定列集合
+fixedColumns()
+// 获取右侧固定列集合
+rightFixedColumns()
+// 计算表格高度
+bodyHeight()
+// 计算表格宽度
+bodyWidth()
+fixedBodyHeight()
+fixedHeight()
+```
