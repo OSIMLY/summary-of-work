@@ -1,5 +1,7 @@
 ## 表格结构
 
+![](./table-layout.png)
+
 ``` html
 <div class="el-table">
     <!--隐藏列-->
@@ -141,3 +143,17 @@ data: {
 
 ### 方法 `methods`
 
+```js
+// 切换行的选择状态
+toggleRowSelection(row, selected)
+// 清除行的选择集
+clearSelection()
+// 处理鼠标离开某行的事件
+handleMouseLeave()
+// 更新垂直滚动条位置
+updateScrollY()
+// 绑定事件：处理鼠标滚动及调整大小事件
+bindEvents()
+// 刷新表格布局
+doLayout()
+```

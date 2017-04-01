@@ -7,3 +7,4 @@
 ## 常用设置
 
 - GitBook, Typora, VsCode, NetEase Cloud Music
+- markdown 预览同步
