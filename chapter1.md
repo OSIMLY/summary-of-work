@@ -1,6 +1,6 @@
 ## 表格结构
 
-![](./table-layout.png)
+![](./table-layout1.png)
 
 ``` html
 <div class="el-table">
@@ -20,6 +20,8 @@
     <div class="el-table__column-resize-proxy"></div>
 </div>
 ```
+
+![](./table-layout.png)
 
 ### 隐藏列
 
@@ -84,7 +86,7 @@ import TableBody from './table-body'
 ``` js
 // 用于选择列的多选按钮
 import ElCheckbox from 'element-ui/packages/checkbox'
-// 控制操作延时的组件
+// 控制操作频度的组件
 import throttle from 'throttle-debounce/throttle'
 import debounce from 'throttle-debounce/debounce'
 // 添加或移除调整尺寸事件
@@ -157,3 +159,51 @@ bindEvents()
 // 刷新表格布局
 doLayout()
 ```
+
+### 计算属性 `computed`
+
+``` js
+// 返回表格主体部分
+bodyWrapper()
+// 能否自动更新表格高度，`height` 属性为数值或具有固定列时可以
+shouldUpdateHeight()
+// 获取行选择集
+selection()
+// 获取列对象集合
+columns()
+// 获取表格数据
+tableData()
+// 获取左侧固定列集合
+fixedColumns()
+// 获取右侧固定列集合
+rightFixedColumns()
+// 计算表格高度
+bodyHeight()
+// 计算表格宽度
+bodyWidth()
+fixedBodyHeight()
+fixedHeight()
+```
+
+### 观察 `watcher`
+
+```js
+// 更新高度
+height
+// 更新 RowKey
+currentRowKey
+// 更新数据
+data
+// 更新展开行 RowKey
+expandRowKeys
+```
+
+### 生命周期 `lifecycle`
+
+分别设置了 `created`、`mounted`、`destroyed`，详见示意图。
+
+![](./life-cycle.png)
+
+### 数据 `data`
+
+主要包含状态管理模块：`store`，布局管理模块：`layout`
