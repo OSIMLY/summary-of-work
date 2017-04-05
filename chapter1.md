@@ -1,6 +1,8 @@
+>非常感谢 ElemeFE 团队开发的 Element 组件库，这套组件库不但界面美观而且代码优雅，结构清晰，十分值得借鉴。Table 是较为常用的组件之一，本文仅对 Table 组件结构做一个简单分析，具体实现可参考 Element ( V1.25 ) 源码。
+
 ## 表格结构
 
-![](./table-layout1.png)
+![](./table-layout.png)
 
 ``` html
 <div class="el-table">
@@ -21,9 +23,11 @@
 </div>
 ```
 
-![](./table-layout.png)
+![有固定列的表格](./pictures/table02.gif)
 
 ### 隐藏列
+
+- 容纳 table 内容
 
 ### 表头部分
 
@@ -73,13 +77,15 @@ import TableBody from './table-body'
 
 ### 右侧固定列补丁
 
-预留滚动条的宽度
+- 预留滚动条的宽度
 
 ### 列宽调整代理
 
-显示调整表格尺寸的按钮
+- 显示调整表格尺寸的按钮
 
-## 子组件
+---
+
+## 表格功能
 
 ### import 项
 
@@ -107,23 +113,23 @@ import { mousewheel } from './util'
 
 ### 属性 `props`
 
-官方文档描述的很详尽，组件的属性与文档基本一致，还有3个未公开的属性：`width` `maxHeight` `context`，理论上也是可以使用的。
+官方文档描述的很详尽，组件的属性与文档基本一致，还有3个未公开的属性：`width`、`maxHeight`、`context`，理论上也是可以使用的。
 
 表格组件的属性基本上用到了所有的属性定义形式，比如：
 
-- 属性的常规定义方法：`propName: propType`
+1. 属性的常规定义方法：`propName: propType`
 
 ```js
 stripe: Boolean
 ```
 
-- 允许多种类型：`propName: [propType1, propType2...]`
+2. 允许多种类型：`propName: [propType1, propType2...]`
 
 ```js
 height: [String, Number]
 ```
 
-- 定义默认值为基本数据类型：
+3. 定义默认值为基本数据类型：
 
 ```js
 fit: {
@@ -132,7 +138,7 @@ fit: {
 }
 ```
 
-- 定义默认值为对象，对象为传址引用，返回一个实例：
+4. 定义默认值为对象，对象为传址引用，返回一个实例：
 
 ```js
 data: {
@@ -143,22 +149,9 @@ data: {
 }
 ```
 
-### 方法 `methods`
+### 数据 `data`
 
-```js
-// 切换行的选择状态
-toggleRowSelection(row, selected)
-// 清除行的选择集
-clearSelection()
-// 处理鼠标离开某行的事件
-handleMouseLeave()
-// 更新垂直滚动条位置
-updateScrollY()
-// 绑定事件：处理鼠标滚动及调整大小事件
-bindEvents()
-// 刷新表格布局
-doLayout()
-```
+主要包含状态管理模块：`store`，布局管理模块：`layout`
 
 ### 计算属性 `computed`
 
@@ -181,8 +174,27 @@ rightFixedColumns()
 bodyHeight()
 // 计算表格宽度
 bodyWidth()
+// 计算固定列表身高度
 fixedBodyHeight()
+// 计算固定列整体高度
 fixedHeight()
+```
+
+### 方法 `methods`
+
+```js
+// 切换行的选择状态
+toggleRowSelection(row, selected)
+// 清除行的选择集
+clearSelection()
+// 处理鼠标离开某行的事件
+handleMouseLeave()
+// 更新垂直滚动条位置
+updateScrollY()
+// 绑定事件：处理鼠标滚动及调整大小事件
+bindEvents()
+// 刷新表格布局
+doLayout()
 ```
 
 ### 观察 `watcher`
@@ -204,6 +216,7 @@ expandRowKeys
 
 ![](./life-cycle.png)
 
-### 数据 `data`
-
-主要包含状态管理模块：`store`，布局管理模块：`layout`
+> 参考资料：
+> - [Element 官方文档](http://element.eleme.io/#/zh-CN)
+> - [Element 项目源码](https://github.com/ElemeFE/element)
+> - [Element 非官方分析](http://www.jianshu.com/c/c71f9c127c71)

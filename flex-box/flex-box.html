@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            body {
+                font-size: 16px;
+                font-family: 'Source Code Pro';
+                font-style: normal;
+            }
+            
+            div {
+                border-radius: 10px;
+            }
+            
+            .title {
+                /*font-weight: bold;*/
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.68);
+                /*background-color: #EC9E47;
+                border-radius: 5px;
+                padding: 0 5px;*/
+            }
+            
+            .space {
+                margin-right: 5px;
+            }
+            
+            .dad-wraper {
+                width: 480px;
+                /*height: 120px;*/
+                margin-bottom: 20px;
+                padding: 15px;
+                background: #4A4A4A;
+                border-radius: 15px;
+                color: #fff;
+            }
+            
+            .dad {
+                width: 100%;
+                display: flex;
+            }
+            
+            .dad-wraper i {
+                color: #FFCD5F;
+            }
+            
+            .dad i {
+                color: #fff;
+            }
+            
+            .dad-text {
+                display: block;
+                width: 100%;
+                padding-bottom: 15px;
+                text-align: center;
+            }
+            
+            .dad>div {
+                text-align: center;
+                vertical-align: middle;
+                padding: 5px;
+            }
+            
+            .son-1 {
+                background: #499CC5;
+            }
+            
+            .son-2 {
+                background: #6CC051;
+            }
+            
+            .son-3 {
+                background: #EC9E47;
+            }
+            
+            .demo-01 .son-1 {
+                flex: 1
+            }
+            
+            .demo-01 .son-2 {
+                flex: 2
+            }
+            
+            .demo-01 .son-3 {
+                flex: 1
+            }
+            
+            .demo-02 .son-1 {
+                flex: 1
+            }
+            
+            .demo-02 .son-2 {
+                flex: 2
+            }
+            
+            .demo-02 .son-3 {
+                flex: 1
+            }
+            
+            .demo-03 .dad {
+                justify-content: flex-start;
+            }
+            
+            .demo-03 .son-1,
+            .demo-04 .son-1,
+            .demo-05 .son-1,
+            .demo-06 .son-1 {
+                width: 120px;
+            }
+            
+            .demo-03 .son-2,
+            .demo-04 .son-2,
+            .demo-05 .son-2,
+            .demo-06 .son-2 {
+                width: 80px;
+            }
+            
+            .demo-03 .son-3,
+            .demo-04 .son-3,
+            .demo-05 .son-3,
+            .demo-06 .son-3 {
+                width: 100px;
+            }
+            
+            .demo-04 .dad {
+                justify-content: center;
+            }
+            
+            .demo-05 .dad {
+                justify-content: flex-end;
+            }
+            
+            .demo-06 .dad,
+            .demo-07 .dad,
+            .demo-08 .dad {
+                height: 230px;
+                justify-content: center;
+            }
+            
+            .demo-06 .dad {
+                align-items: flex-start;
+            }
+            
+            .demo-07 .dad {
+                align-items: center;
+            }
+            
+            .demo-08 .dad {
+                align-items: flex-end;
+            }
+            
+            .demo-06 .son-1,
+            .demo-07 .son-1,
+            .demo-08 .son-1 {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .demo-06 .son-2,
+            .demo-07 .son-2,
+            .demo-08 .son-2 {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .demo-06 .son-3,
+            .demo-07 .son-3,
+            .demo-08 .son-3 {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="dad-wraper demo-01">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>flex: <i>1</i></div>
+                </div>
+                <div class="son-2">
+                    <span class="title"><#son-2></span>
+                    <div>flex: <i>2</i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-02">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>flex: <i>1</i></div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>flex: <i>2</i></div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>flex: <i>1</i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-03">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>justify-content: <i>flex-start</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>W: 120px</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>W: 80px</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>W: 100px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-04">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>justify-content: <i>center</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>W: 120px</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>W: 80px</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>W: 100px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-05">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>justify-content: <i>flex-end</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>W: 120px</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>W: 80px</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>W: 100px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-06">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>align-items: <i>flex-start</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>120 x 120</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>80 x 80</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>100 x 100</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-07">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>align-items: <i>center</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>120 x 120</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>80 x 80</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>100 x 100</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dad-wraper demo-07">
+            <div class="dad-text">
+                <span class="title"><#dad></span>
+                <div>display: <i>flex</i></div>
+                <div>align-items: <i>flex-end</i></div>
+            </div>
+            <div class="dad">
+                <div class="son-1 space">
+                    <span class="title"><#son-1></span>
+                    <div>120 x 120</div>
+                </div>
+                <div class="son-2 space">
+                    <span class="title"><#son-2></span>
+                    <div>80 x 80</div>
+                </div>
+                <div class="son-3">
+                    <span class="title"><#son-3></span>
+                    <div>100 x 100</div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
