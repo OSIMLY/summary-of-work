@@ -81,7 +81,11 @@ flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器�
 
   - 设置子容器沿主轴排列：justify-content
 
+  justify-content 属性用于定义如何沿着主轴方向分配子容器的间距。
+
   - 设置子容器沿交叉轴排列：align-items
+
+
 
 - 子容器
 
@@ -109,5 +113,25 @@ flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器�
   通过以上这些常用属性实现常用的 flex 应该没有问题，如果要实现复杂的布局还需要深入了解更多的属性。
 
   ### flex 进阶概念
+
+- 父容器
+
+  - 设置换行方式：flex-wrap
+
+  - 轴向与换行一起搞定：flex-flow
+
+  - 多行沿交叉轴对齐：align-content
+
+- 子容器
+
+  - 设置基准大小：flex-basis
+
+  - 设置扩展比例：flex-grow
+
+  - 设置收缩比例：flex-shink
+
+  - 设置排列顺序：order
+
+  以上就是 flex 布局涉及到的全部属性，是不是已经跃跃欲试了?
 
 
