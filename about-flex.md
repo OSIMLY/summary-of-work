@@ -55,7 +55,11 @@ flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器�
 
 ![](./flex-box/assets/box.png)
 
-使用 flex 布局首先要设置父容器 `display: flex`，其次设置子容器的 `flex` 属性。
+使用 flex 布局首先要设置父容器 `display: flex`，然后设置 `justify-content: center` 实现水平居中，最后设置 `align-items: center` 实现垂直居中。
+
+好了，大功告成。等等好像哪里不对，`justify-content` 和 `align-items` 是啥？哪里可以看出来横向、竖向这些含义？这就要从 flex 的两个基本概念说起了。
+
+其次设置子容器的 `flex` 属性。
 
 ``` css
 #dad {
