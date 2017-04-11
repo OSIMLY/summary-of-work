@@ -43,7 +43,21 @@
 
 ## flex 基本概念
 
-说到底 flex 都有哪些特性呢？其实很简单，核心的概念只有两个：容器和轴。容器包括外层的父容器和内层的子容器，轴包括主轴和交叉轴，可以说 flex 布局的全部基础都构建在这两个概念上。
+使用 flex 布局首先要设置父容器 `display: flex`，然后设置 `justify-content: center` 实现水平居中，最后设置 `align-items: center` 实现垂直居中。
+
+好了，大功告成。等等好像哪里不对，`justify-content` 和 `align-items` 是啥？哪里可以看出来横向、竖向的含义？没错，flex 并没有这么简单，这就要从两个基本概念说起了。
+
+``` css
+#dad {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+```
+
+![一个简单的例子](./flex-box/assets/base.gif)
+
+说到底 flex 都有哪些特性呢？其实很简单，核心的概念只有两个：容器和轴。容器包括外层的父容器和内层的子容器，轴包括主轴和交叉轴，可以说 flex 布局的全部特性都构建在这两个概念上。flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器、子容器各 6 个。不过常用的属性只有 4 个，父容器、子容器各 2 个，我们就先从常用的说起吧。
 
 ![](./flex-box/assets/base-concept.png)
 
@@ -51,35 +65,7 @@
 
 容器具有这样的特点：父容器可以统一设置子容器的排列方式，子容器也可以单独设置自身的排列方式，如果两者同时设置，以子容器的设置为准。
 
-flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器、子容器各 6 个。不过常用的属性只有 4 个，父容器、子容器各 2 个。
-
 ![](./flex-box/assets/box.png)
-
-使用 flex 布局首先要设置父容器 `display: flex`，然后设置 `justify-content: center` 实现水平居中，最后设置 `align-items: center` 实现垂直居中。
-
-好了，大功告成。等等好像哪里不对，`justify-content` 和 `align-items` 是啥？哪里可以看出来横向、竖向这些含义？这就要从 flex 的两个基本概念说起了。
-
-其次设置子容器的 `flex` 属性。
-
-``` css
-#dad {
-    display: flex
-}
-
-#son-1 {
-    flex: 1
-}
-
-#son-2 {
-    flex: 2
-}
-
-#son-3 {
-    flex: 1
-}
-```
-
-![一个简单的例子](./flex-box/assets/base.gif)
 
 - 父容器
 
@@ -127,7 +113,7 @@ flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器�
 
     ![](./flex-box/assets/align-items/center.png)
 
-    - baseline：这里的 baseline 默认是对首行文字而言的，即 first baseline，所有子容器的基线位于同一条直线上，基线距离侧轴始端最远的子容器与侧轴始端相切。
+    - baseline：基线对齐，这里的 baseline 默认是对首行文字而言的，即 first baseline，基线距侧轴始端最远的子容器与侧轴始端相切，其余子容器与之基线对齐。
 
     ![](./flex-box/assets/align-items/baseline.png)
 
@@ -138,6 +124,12 @@ flex 布局涉及到 12 个 CSS 属性（不含 `display`），其中父容器�
 - 子容器
 
   - 在主轴上如何伸缩：flex
+
+  子容器是有弹性的（flex === 弹性），它们会自动填充剩余空间，子容器的伸缩比例由 flex 属性确定。
+
+  flex 的值可以是无单位数字（如：1, 2, 3），也可以是有单位数字（如：15px，30px，60px），还可以是 `none` 关键字。子容器会按照 flex 定义的尺寸比例自动伸展，如果取值为 `none` 则不伸缩。
+
+  虽然 flex 是多个属性的缩写，允许 1 - 3 个值连用，不过通常 1 个值就可以搞定了，它的全部写法我们会在后面介绍。
 
   - 与众不同的交叉轴排列：align-self
 
