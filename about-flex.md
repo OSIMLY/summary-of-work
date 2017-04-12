@@ -133,6 +133,28 @@
 
   - 与众不同的交叉轴排列：align-self
 
+  每个子容器也可以单独定义沿交叉轴排列的方式，此属性的可选值与父容器 `align-items` 属性完全一致，如果两者同时设置则以子容器的 `align-self` 属性为准。
+
+    - flex-start：起始端对齐
+
+
+
+    - flex-end：末尾段对齐
+
+
+
+    - center：居中对齐
+
+
+
+    - baseline：基线对齐
+
+
+
+    - stretch：子容器沿侧轴方向的尺寸拉伸至与父容器一致。
+
+
+
 - 轴
 
   ![](./flex-box/assets/axis.png)
@@ -158,29 +180,83 @@
 
   - 交叉轴
 
-  主轴逆时针旋转 90° 就是交叉轴。
+  主轴逆时针旋转 90° 就是交叉轴，交叉轴的方向决定了 flex-start 和 flex-end 的位置。
 
   通过以上这些常用属性实现常用的 flex 应该没有问题，如果要实现复杂的布局还需要深入了解更多的属性。
 
-  ### flex 进阶概念
+### flex 进阶概念
 
 - 父容器
 
   - 设置换行方式：flex-wrap
 
+决定子容器是否换行排列，不但可以顺序换行而且支持逆序换行。
+
+    - nowrap
+
+
+
+    - wrap
+
+
+
+    - wrap-reverse
+
+
+
   - 轴向与换行一起搞定：flex-flow
 
+  flow 即流向，也就是子容器沿着哪个方向流动，流动到终点是否允许转弯，比如 `flex-flow: row wrap`，这个属性为复合属性，相当于 flex-direction 与 flex-wrap 的组合。
+
+    - `row`、`column` 等，可单独设置主轴方向
+
+    - `wrap`、`nowrap` 等，可单独设置换行方式
+
+    - `row nowrap`、`column wrap` 等，也可两者同时设置
+
   - 多行沿交叉轴对齐：align-content
+
+  当子容器多行排列时，设置行与行之间的对齐方式，可选值与 align-items 是一致的。
+
+    - flex-start：起始端对齐
+
+
+
+    - flex-end：末尾段对齐
+
+
+
+    - center：居中对齐
+
+
+
+    - baseline：基线对齐
+
+
+
+    - stretch：子容器沿侧轴方向的尺寸拉伸至与父容器一致。
+
+    - 
 
 - 子容器
 
   - 设置基准大小：flex-basis
 
+  在不伸缩的情况下，子容器的原始尺寸。
+
+  
+
   - 设置扩展比例：flex-grow
+
+  子容器弹性伸展的比例。
 
   - 设置收缩比例：flex-shink
 
+  子容器弹性收缩的比例。
+
   - 设置排列顺序：order
+
+  改变子容器的排列顺序，覆盖 HTML 代码中的默认顺序。
 
   以上就是 flex 布局涉及到的全部属性，是不是已经跃跃欲试了?
 
