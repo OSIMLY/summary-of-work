@@ -216,7 +216,7 @@
 
   - 多行沿交叉轴对齐：align-content
 
-  当子容器多行排列时，设置行与行之间的对齐方式，可选值与 align-items 是一致的。
+  当子容器多行排列时，设置行与行之间的对齐方式，可选值与 justify-content 是一致的。
 
     - flex-start：起始端对齐
 
@@ -230,11 +230,11 @@
 
 
 
-    - baseline：基线对齐
+    - space-around：基线对齐
 
 
 
-    - stretch：子容器沿侧轴方向的尺寸拉伸至与父容器一致。
+    - space-between：子容器沿侧轴方向的尺寸拉伸至与父容器一致。
 
     - 
 
