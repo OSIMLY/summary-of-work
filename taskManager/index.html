@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet"
+      href="./css/element.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <el-button @click="visible = true">添加</el-button>
+      <el-dialog v-model="visible"
+        title="Hello world">
+        <p>欢迎使用 Element</p>
+      </el-dialog>
+      <el-table :data="taskStack">
+        <el-table-column prop="title"
+          label="主题">
+          <template scope="scope">
+            <el-input v-if="scope.$index===0&&lastTaskStarted" v-model="scope.row.title"></el-input>
+            <span v-else>{{scope.row.title}}</span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="timeLog"
+          label="开始时间">
+          <template scope="scope">
+            {{getStartTime(scope.row.timeLog)}}
+          </template>
+        </el-table-column>
+        <el-table-column label="操作">
+          <template scope="scope">
+            <el-button size="small"
+              @click="onTaskStart(scope.row.id)">开始</el-button>
+            <el-button size="small"
+              @click="onTaskEnd(scope.row.id)">结束</el-button>
+            <el-button size="small"
+              @click="onTaskDelete(scope.row.id)">删除</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+  </body>
+  <script src="./js/vue.js"></script>
+  <script src="./js/element.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function () {
+        return {
+          visible: false,
+          idFlag: 0,
+          newTask: {
+            id: null,
+            title: '',
+            timeLog: []
+          },
+          taskStack: [{
+            id: 1,
+            title: 'abc',
+            timeLog: []
+          }, {
+            id: 2,
+            title: 'def',
+            timeLog: []
+          }],
+          taskList: []
+        }
+      },
+      computed:{
+        lastTask: function(){
+          return this.taskStack[0]
+        },
+        lastTaskStarted: function(){
+          return this.taskStack[0].timeLog.length === 0
+        }
+      },
+      methods: {
+        onTaskStart() {
+          let startTime = new Date()
+          let timeLog = {
+            start: startTime,
+            end: null
+          }
+          this.lastTask.timeLog.push(timeLog)
+          console.log(this.taskStack)
+        },
+        onTaskEnd(id) {
+
+        },
+        onTaskDelete(id) {
+        },
+        getStartTime(timeLog){
+          return timeLog.length > 0 && timeLog[0].hasOwnProperty('start')
+          ? scope.row.timeLog[0].start
+          : ''
+        }
+      }
+    })
+  </script>
+
+</html>
