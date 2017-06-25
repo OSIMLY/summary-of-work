@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <text class="count-number">{{count}}</text>
+  </view>
+  <view class="usermotto">
+    <button type="primary" bindtap="setCount"> 计数 </button>
+  </view>
+</view>
