@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Math 对象方法</title>
+</head>
+<body>
+<outline text="Math 对象方法"><outline text="获取极值"><outline text="最大值：max"></outline>
+<outline text="最小值：min"></outline>
+</outline>
+<outline text="获取近似值"><outline text="向上取整：ceil"></outline>
+<outline text="向下取整：floor"></outline>
+<outline text="四舍五入：round"></outline>
+</outline>
+</outline>
+</body>
+</opml>

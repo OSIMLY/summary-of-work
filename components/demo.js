@@ -84,7 +84,12 @@ var isObject = function (obj) {
     return obj !== null && typeof obj === 'object'
 }
 
-var users = allUsers.filter((user) => user.loged === true)
+var isArray = function (arr) {
+    return arr instanceof Array
+}
+
+
+var users = allUsers.filter(user => user.loged === true)
 
 var a = {}
 a === {}
@@ -194,3 +199,19 @@ if (!("a" in window)) {
     var a = 1;
 }
 console.log(a);
+
+while (true) { }
+setTimeout(function () {
+    console.log("first")
+}, 0)
+console.log("second")
+
+$vm0
+
+$('el-menu').__vue__
+
+    < div class="finance" >
+        <t8t-search></t8t-search>
+        <t8t-tree></t8t-tree>
+        <t8t-table></t8t-table>
+</div >
