@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">输入区域高度自适应，不会出现滚动条</view>
+      <view class="textarea-wrp">
+        <textarea bindblur="bindTextAreaBlur" bindinput="bindTextareaInput" auto-height value="{{textValue}}" />
+      </view>
+      <view class="page-section">
+      <view class="page-section-title">这是一个可以自动聚焦的textarea</view>
+      <view class="textarea-wrp">
+        <textarea auto-focus="true" style="height: 3em" />
+      </view>
+    </view>
+    </view>
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary" bindtap="btnCopy">复制</button>
+      <button type="primary" bindtap="btnPaste">粘贴</button>
+      <button type="primary" bindtap="fmtText">格式化</button>
+    </view>
+  </view>
+</view>
