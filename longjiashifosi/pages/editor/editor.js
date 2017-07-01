@@ -16,7 +16,7 @@ Page({
   fmtText: function (e) {
     debugger
     let text = this.data.textValue
-    text = text.replace(/[,，、\s\n]+/g, " ")
+    text = text.replace(/[.,，、\s\n]+/g, " ")
     let nameArr = text.split(" ")
     nameArr = Array.from(new Set(nameArr))
     text = nameArr.join(" ")
@@ -26,17 +26,19 @@ Page({
   },
 
   btnCopy: function (e) {
-    debugger
     let self = this
-    wx.getClipboardData({
-      success: function (res) {
-        self.data.textValue = res
-      }
+    wx.setClipboardData({
+      data: self.data.textValue
     })
   },
 
   btnPaste: function (e) {
-
+    let self = this
+    wx.getClipboardData({
+      success: function (res) {
+        self.data.textValue = res.data
+      }
+    })
   },
 
   bindTextareaInput: function (e) {
