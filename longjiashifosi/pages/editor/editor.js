@@ -1,4 +1,3 @@
-// editor.js
 Page({
 
   /**
@@ -16,7 +15,7 @@ Page({
   fmtText: function (e) {
     debugger
     let text = this.data.textValue
-    text = text.replace(/[.,，、\s\n]+/g, " ")
+    text = text.replace(/[.,，。、\s\n]+/g, " ")
     let nameArr = text.split(" ")
     nameArr = Array.from(new Set(nameArr))
     text = nameArr.join(" ")
